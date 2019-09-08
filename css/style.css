@@ -1,0 +1,576 @@
+@font-face { font-family: Geomanist; src: url('Geomanist-Regular.otf'); }
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Geomanist', sans-serif;
+    list-style: none;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------ BARRA DE NAVEGACIÓN SUPERIOR ------ */
+.barra-superior {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 4em;
+}
+
+.barra-superior i {
+    font-size: 18px;    
+}
+
+.barra-superior h6 {
+    flex-grow: .97;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+
+/* ------ NAVBAR INFERIOR FOOTER FIJADO ------ */
+.footer-nav {
+    background-color: #fff;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.footer-nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-nav li {
+    text-align: center;
+    width: 20%;
+    padding: 14px 0px;
+}
+
+.footer-nav a {
+    text-align: center;
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+    opacity: 0.4;
+    font-weight: bold;
+}
+
+.footer-nav img {
+    max-width: 20px;
+    height: auto;
+    display: block;
+    margin: auto;
+    opacity: 0.2;
+}
+
+.seccion-activa a {
+    opacity: 1;  
+}
+
+.seccion-activa img {
+    opacity: 1;
+}
+
+/* ------ ONBOARDING ------*/
+.main-onboarding {
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
+.main-onboarding img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    background: #f2f3f4;
+    padding: .4em;
+    border-radius: 8px;
+    align-self: center;
+    margin-top: 10%;
+}
+.main-onboarding h1 {
+    width: 100%;
+    margin-bottom: .4em;
+}
+.main-onboarding p {
+    color: #abb0b9;
+    font-size: 15px;
+    line-height: 1.3;
+    padding: 0 10%;
+}
+.main-onboarding .btn {
+    background: #fff;
+    border: 1px solid #f02fc2;
+    color: #f02fc2;
+}
+
+/* ------ SECCION FORM DE DATOS ------ */
+.ocultar {
+    display: none !important
+}
+
+.formdatos {
+    flex-grow: 1;
+    margin-top: 5%
+}
+
+.formdatos input {
+    width: 100%;
+    color: #abb0b9;
+    font-size: 15px;
+    border-bottom: 1px solid #bdc2ca;
+    padding: .6em 0;
+    margin-bottom: 1.4em;
+}
+
+.formdatos input::placeholder {
+    width: 100%;
+    color: #abb0b9;
+    font-size: 15px;
+    border-bottom: 1px solid #bdc2ca;
+    padding: .6em 0;
+    margin-bottom: 1.4em;
+}
+
+.formdatos select {
+    width: 100%;
+    color: #abb0b9;
+    font-size: 15px;
+    border-bottom: 1px solid #bdc2ca;
+    padding: .6em 0;
+    margin-bottom: 1.4em;
+    background: #fff;
+    border-radius: 0;
+}
+
+/* ------ SECCION CONTEXTOS ------ */
+.main-contextos {
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.contextos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* ------ CONTEXTOS ------ */
+h1 {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.2;
+    width: 80%;
+}
+
+.contexto {
+    display: inline-block;
+    width: 32%;
+    background-color: #f2f3f4;
+    border-radius: 8px;
+    padding: 2em 1em;
+    color: #abb0b9;
+    font-family: Geomanist;
+    font-size: 13px;
+    margin-bottom: .5em;
+    text-align: center;
+}
+.contexto i {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 20px;
+    color: #abb0b9;
+}
+#checkboxes input[type=checkbox]{
+    display: none;
+}
+
+#checkboxes input[type=checkbox]:checked + .contexto{
+    background-color: #fff !important;
+    box-shadow: 0 6px 30px 0 rgba(46,54,78,.15);
+    color: #000 !important;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+#checkboxes input[type=checkbox]:checked + .contexto i{
+    color: #6094ea;
+    background: -webkit-linear-gradient(45deg, #f02fc2, #6094ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+.btn {
+    background-image: linear-gradient(to right, #f02fc2, #6094ea);
+    padding: 1.3em 2em;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn2 {
+    padding: 1.2em 2em;
+    text-align: center;
+    font-size: 15px;
+    color: #abb0b9;
+    text-decoration: none;
+}
+
+.btn2 i {
+    margin-right: .5em;
+}
+
+/* ------ SACAR ESTILOS DEFAULT DEL RANGE SLIDER ------ */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* ------ ESTILOS CUSTOM PARA EL INPUT RANGE ------ */
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 30px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: #bdc2ca;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 1px solid #f02fc2;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -12px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #bdc2ca;
+}
+
+/* ------ ESTILOS PARA RESULTADO DE TU RITMO ------ */
+#paso4, #paso5 {
+    text-align: center;
+}
+.miritmo {
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 20px 40px 0px rgba(36,37,79,0.2);
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.miritmo h1 {
+    width: 100%;
+    margin-bottom: .4em;
+}
+.miritmo #bpm, .miritmo #bpm-recalculado {
+    font-size: 72px;
+}
+.miritmo h6 {
+    font-size: 12px;
+    color: #bdc2ca;
+}
+#paso4 i {
+    font-size: 12px;
+    margin-left: .6em;
+}
+
+
+/* ------ SECCION DE SINCRONIZADOS ------ */
+.main-sincronizados {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.main-sincronizados h1 {
+    width: 100%;
+}
+
+.sincrotipos {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sincrotipos a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sincrotipos li {
+    display: inline-block;
+    width: 49%;
+    background-image: linear-gradient(30deg, #f02fc2, #6094ea);
+    border-radius: 8px;
+    padding: 3em 2em;
+    color: #fff;
+    font-family: Geomanist;
+    font-size: 15px;
+    margin-bottom: .5em;
+    text-align: center;
+}
+
+.sincrotipos li:first-child {
+    background-image: linear-gradient(30deg, #6094ea, #43e97b);
+}
+
+.sincrotipos li i {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 20px;
+    color: #fff;
+}
+
+.sincrousers {
+    margin-top: 20px
+}
+
+.sincrousers li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.4em;
+    width: 100%;
+}
+
+.sincrousers li img {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.sincrousers li div {
+    flex-grow: 1;
+    padding: 0 1em;
+}
+
+.sincrousers li div p {
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.sincrousers li div h5 {
+    color: #abb0b9;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.sincrousers .sutempo {
+    text-align: center;
+    font-size: 20px;
+    color: #6094ea;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid #bdc2ca;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sincrousers .defasaje {
+    text-align: right;
+    flex-grow: 0;
+}
+
+.btn3 {
+    background: #fff;
+    border: 1px solid #f02fc2;
+    color: #f02fc2;
+}
+
+/* ------ PERFIL INDIVIDUAL SINCRO ------ */
+.profile {
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.profile div {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile .detalles {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profile .detalles li {
+    width: 33%;
+    padding: 1em 0;
+}
+
+.profile .detalles .medio {
+    border-left: 1px solid #bdc2ca;
+    border-right: 1px solid #bdc2ca;
+}
+
+.profile .detalles p {
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.profile .detalles h5 {
+    color: #abb0b9;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.profile .btn {
+    background: #fff;
+    border: 1px solid #f02fc2;
+    color: #f02fc2;
+}
+
+
+/* ------ ESTILOS MI PERFIL ------ */
+.miperfil {
+    height: 74vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
+
+.miperfil img {
+    width: 200px;
+    height: auto;
+    border-radius: 100px;
+    align-self: center;
+    background-color: #f2f3f4;
+}
+
+.miperfil ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.miperfil h1 {
+    width: 100%;
+}
+
+.miperfil ul li {
+    width: 50%;
+    padding: 1em 0;
+}
+
+.miperfil ul li:first-child {
+    border-right: 1px solid #bdc2ca;
+}
+
+.miperfil ul li p {
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.miperfil ul li h5 {
+    color: #abb0b9;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.miperfil .btn {
+    background: #fff;
+    border: 1px solid #f02fc2;
+    color: #f02fc2;
+
+}
+
+.miperfil .btn i {
+    margin-right: .5em;
+}
+
+/* ------ OCULTAR BRANDING DE 000WEBHOST ------ */
+img[alt*="000webhost"],
+img[alt*="000webhost"][style],
+img[src*="000webhost"],
+img[src*="000webhost"][style],
+body > div:nth-last-of-type(1)[style]{
+	opacity: 0 !important;
+	pointer-events:none !important;
+	width: 0px !important;
+	height: 0px !important;
+	visibility:hidden !important;
+	display:none !important;
+}

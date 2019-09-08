@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charset="utf-8"/>
+        <title></title>
+        <link href="css/all.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="barra-superior">
+                <i class="fas fa-angle-left" onclick="window.history.go(-1)"></i>
+                <h6>Sincronizados</h6>
+            </nav>  
+        </header>
+        <main>
+            <div class="main-sincronizados">
+                <h1>Estás en sintonía con</h1>
+                <ul class="sincrousers">
+                    <li><img src="img/user1.jpg"><div><p>Pablo, 23</p><h5>Jazz</h5></div><span id="tempo-sincro" class="sutempo"></span><div class="defasaje"><span id="diferencia"></span><h5 style="font-size:10px">DEFASAJE</h5></div></li>
+                    <li><img src="img/user6.jpg"><div><p>Ani, 22</p><h5>Indie</h5></div><span id="sutempo1" class="sutempo" style="color:#f02fc2">62</span><div class="defasaje"><span id="diferencia1"></span><h5 style="font-size:10px">DEFASAJE</h5></div></li>
+                    <li><img src="img/user7.jpg"><div><p>Hernán, 29</p><h5>Folk</h5></div><span id="sutempo2" class="sutempo" style="color:#f02fc2">65</span><div class="defasaje"><span id="diferencia2"></span><h5 style="font-size:10px">DEFASAJE</h5></div></li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <nav class="footer-nav">
+            <ul>
+                <li><a href="perfil.html"><img src="img/mitempo-icon.svg" alt="Perfil">Perfil</a></li>
+                <li><a href="miritmo.html"><img src="img/historial-icon.svg" alt="Mi tempo">Mi tempo</a></li>
+                <li  class="seccion-activa"><a href="sincronizados.html"><img src="img/sincro-icon.svg" alt="Sincronizados">Sincronizados</a></li>
+            </ul>
+            </nav>
+        </footer>
+        <script>
+            var tempopropio = JSON.parse(obtenerLocalStorage('nuevotempo'));
+            var sutempo1 = document.getElementById('sutempo1').innerHTML;
+            var sutempo2 = document.getElementById('sutempo2').innerHTML;
+            
+            document.getElementById('tempo-sincro').innerHTML = tempopropio.toFixed();
+            
+            var distancia = tempopropio - tempopropio;
+            var distancia1 = tempopropio - sutempo1;
+            var distancia2 = tempopropio - sutempo2;
+            
+            document.getElementById('diferencia').innerHTML = distancia.toFixed();
+            document.getElementById('diferencia1').innerHTML = distancia1.toFixed();
+            document.getElementById('diferencia2').innerHTML = distancia2.toFixed();
+            
+            function obtenerLocalStorage(name) {
+                return localStorage.getItem(name)
+            }
+        </script>
+    </body>
+</html>

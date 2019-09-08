@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charset="utf-8"/>
+        <title></title>
+        <link href="css/all.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="barra-superior">
+                <i class="fas fa-angle-left" onclick="window.history.go(-1)"></i>
+                <h6>Mi perfil</h6>
+            </nav>  
+        </header>
+        <main class="miperfil">
+            <img src="img/profile-pic.png">
+            <h1><span id="nombre-user">Anónimo</span>, <span id="edad-user">sin edad</span></h1>
+            <ul>
+                <li><p id="tempo-user">Sin tempo</p><h5>BPM</h5></li>
+                <li><p id="genero-user">No definido</p><h5>Género</h5></li>
+            </ul>
+            <a href="calcular.html" class="btn"><i class="fas fa-plus"></i> Nuevo tempo</a>
+        </main>
+        <footer>
+            <nav class="footer-nav">
+            <ul>
+                <li  class="seccion-activa"><a href="perfil.html"><img src="img/mitempo-icon.svg" alt="Perfil">Perfil</a></li>
+                <li><a href="miritmo.html"><img src="img/historial-icon.svg" alt="Mi tempo">Mi tempo</a></li>
+                <li><a href="sincronizados.html"><img src="img/sincro-icon.svg" alt="Sincronizados">Sincronizados</a></li>
+            </ul>
+            </nav>
+        </footer>
+        <script>
+            var tempopropio = JSON.parse(obtenerLocalStorage('nuevotempo'));
+            var nombre = obtenerLocalStorage('nombre');
+            var edad = obtenerLocalStorage('edad');
+            var genero = obtenerLocalStorage('genero');
+            
+            document.getElementById('nombre-user').innerHTML = nombre;
+            document.getElementById('edad-user').innerHTML = edad;
+            document.getElementById('tempo-user').innerHTML = tempopropio.toFixed();
+            document.getElementById('genero-user').innerHTML = genero;
+            
+            function obtenerLocalStorage(name) {
+                return localStorage.getItem(name)
+            }
+        </script>
+    </body>
+</html>

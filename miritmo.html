@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charset="utf-8"/>
+        <title></title>
+        <link href="css/all.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+    </head>
+    <body onLoad="recalcular()">
+        <header>
+            <nav class="barra-superior">
+                <i class="fas fa-angle-left" onclick="window.history.go(-1)"></i>
+                <h6>Mi tempo</h6>
+            </nav>  
+        </header>
+        <main>
+            <div id="paso5" class="main-contextos">
+                <p><span id="recalculado"></span></p>
+                <div class="miritmo">
+                    <h1 id="tempo-recalculado"></h1>
+                    <span id="bpm-recalculado"></span>
+                    <h6>BPM</h6>
+                </div>
+                <a href="calcular.html" class="btn2"><i class="fas fa-plus"></i>Nuevo tempo</a>
+                <a href="sincronizados.html" class="btn">Buscar sincronizados</a>
+            </div>
+        </main>
+        <footer>
+            <nav class="footer-nav">
+            <ul>
+                <li><a href="perfil.html"><img src="img/mitempo-icon.svg" alt="Perfil">Perfil</a></li>
+                <li class="seccion-activa"><a href="#"><img src="img/historial-icon.svg" alt="Mi tempo">Mi tempo</a></li>
+                <li><a href="sincronizados.html"><img src="img/sincro-icon.svg" alt="Sincronizados">Sincronizados</a></li>
+            </ul>
+            </nav>
+        </footer>
+        <script>
+            function recalcular() {
+                var resultanterior = JSON.parse(obtenerLocalStorage('bpm'));
+                var tempoanterior = obtenerLocalStorage('tempo');
+                var duracion = obtenerLocalStorage('lapso');
+
+                if (duracion <= 20) {
+                    document.getElementById('recalculado').innerHTML = 'A las chapas, así que tu ritmo subió a'
+
+                    var resultnuevo = resultanterior + 10;
+
+                    document.getElementById('bpm-recalculado').innerHTML = resultnuevo.toFixed();
+                    document.getElementById('bpm-recalculado').style.color = "#6094ea";
+
+                    var temponuevo = document.getElementById('tempo-recalculado');
+
+                    if (resultnuevo <= 76) {
+                        temponuevo.innerHTML = "Adagio";
+                    }
+                    else if (resultnuevo > 76 && resultnuevo <= 108) {
+                        temponuevo.innerHTML = "Andante";
+                    }
+                    else if (resultnuevo > 108 && resultnuevo <= 120) {
+                        temponuevo.innerHTML = "Moderato";
+                    }
+                    else if (resultnuevo > 120 && resultnuevo <= 168) {
+                        temponuevo.innerHTML = "Allegro";
+                    }
+                    else if (resultnuevo > 168 && resultnuevo <= 200) {
+                        temponuevo.innerHTML = "Presto";
+                    }
+                    else if (resultnuevo > 200) {
+                        temponuevo.innerHTML = "Prestissimo";
+                    }
+                }
+
+                else if (duracion > 20) {
+                    document.getElementById('recalculado').innerHTML = 'Te tomaste tu tiempo, así que tu ritmo bajó a'
+
+                    var resultnuevo = resultanterior - 10;
+
+                    document.getElementById('bpm-recalculado').innerHTML = resultnuevo.toFixed();
+                    document.getElementById('bpm-recalculado').style.color = "#f02fc2";
+
+                    var temponuevo = document.getElementById('tempo-recalculado');
+
+                    if (resultnuevo <= 76) {
+                        temponuevo.innerHTML = "Adagio";
+                    }
+                    else if (resultnuevo > 76 && resultnuevo <= 108) {
+                        temponuevo.innerHTML = "Andante";
+                    }
+                    else if (resultnuevo > 108 && resultnuevo <= 120) {
+                        temponuevo.innerHTML = "Moderato";
+                    }
+                    else if (resultnuevo > 120 && resultnuevo <= 168) {
+                        temponuevo.innerHTML = "Allegro";
+                    }
+                    else if (resultnuevo > 168 && resultnuevo <= 200) {
+                        temponuevo.innerHTML = "Presto";
+                    }
+                    else if (resultnuevo > 200) {
+                        temponuevo.innerHTML = "Prestissimo";
+                    }
+                }
+                
+                saveLocalStorage('nuevotempo', resultnuevo)
+            }
+
+
+            function saveLocalStorage(name, data) {
+                localStorage.setItem(name, data)
+            }
+
+            function obtenerLocalStorage(name) {
+                return localStorage.getItem(name)
+            }
+
+            function borrarLocalStorage(name) {
+                return localStorage.removeItem(name)
+            }
+        </script>
+    </body>
+</html>
